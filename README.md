@@ -21,6 +21,15 @@
 * Launch the frontend url displayed on your terminal on any browser
 
 ### Mobile App (Flutter)
+#### Run on browser
 * Open a terminal
 * Then change directory to `cd path/to/lead_dev_exercise/my_olist_orders`
 * Run `flutter run lib/main.dart` or `npm run start` to run the mobile app
+* Choose the browser value from the list of browsers suggested
+
+#### Build Installable App
+* For apk (Android) you need to run the command:
+    - `flutter build apk --release`
+* For ipa (iOS) you need to run the command :
+    - `flutter build ios --release`
+* Locate the released APK or IPA files from `build/app/outputs/flutter-apk/app-release.apk`
