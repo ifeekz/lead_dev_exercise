@@ -6,9 +6,9 @@ import { MongoClient } from "mongodb";
 const log: debug.IDebugger = debug("app:orders-controller");
 class OrdersController {
   async listOrders(req: express.Request, res: express.Response) {
-    const limit = !req.query.limit ? 20 : Number(req.query.limit);
-    const offet = !req.query.offset ? 0 : Number(req.query.offset);
-    const sort = !req.query.sort ? "shipping_limit_date" : req.query.sort;
+    const limit = Number(req.query?.limit || 20);
+    const offet = Number(req.query?.offset || 0);
+    const sort = req.query?.sort || "shipping_limit_date";
 
     const orders = await ordersService.list(req.user.seller_id, limit, offet);
     return res.status(200).send(orders);

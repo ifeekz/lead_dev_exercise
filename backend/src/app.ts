@@ -9,7 +9,21 @@ import { CommonRoutesConfig } from "./common/common.routes.config";
 import { AuthRoutes } from "./auth/auth.routes.config";
 import { OrdersRoutes } from "./orders/orders.routes.config";
 import debug from "debug";
-import 'dotenv/config'
+import 'dotenv/config';
+const whitelist = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "https://635f8158d10573779a18b026--clinquant-sawine-31c539.netlify.app",
+];
+const corsOptions = {
+  credentials: true,
+  origin: (origin: any, callback: Function) => {
+    console.log("origin: ", origin);
+    if (whitelist.includes(origin)) return callback(null, true);
+
+    callback(new Error("Not allowed by CORS"));
+  },
+};
 
 const app: express.Application = express();
 const server: http.Server = http.createServer(app);
@@ -22,7 +36,7 @@ const PORT: number = Number(process.env.PORT) || 3000;
 app.use(express.json());
 
 // middleware to allow cross-origin requests
-app.use(cors({ origin: '*' }));
+app.use(cors(corsOptions));
 
 // preparing expressWinston logging middleware configuration,
 // which will automatically log all HTTP requests handled by Express.js

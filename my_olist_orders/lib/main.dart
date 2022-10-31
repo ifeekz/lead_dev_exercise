@@ -12,11 +12,20 @@ class MyOListOrders extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'My OList Orders',
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: const LoginScreen(),
+      home: Scaffold(
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text(
+            "Login Screen",
+          ),
+        ),
+        body: LoginScreen(),
+      ),
     );
   }
 }

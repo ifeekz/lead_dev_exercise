@@ -1,7 +1,7 @@
 import express from "express";
 import authService from "./auth.service";
 import debug from "debug";
-import { Buffer } from 'buffer'
+import { Buffer } from "buffer";
 
 const log: debug.IDebugger = debug("app:auth-middleware");
 class AuthMiddleware {
@@ -46,7 +46,9 @@ class AuthMiddleware {
     } else {
       res
         .status(400)
-        .send({ error: `Missing required fields seller_city and seller_state` });
+        .send({
+          error: `Missing required fields seller_city and seller_state`,
+        });
     }
   }
 }
