@@ -1,5 +1,5 @@
 # Lead Dev Assessment
-Here is a [LIVE DEMO] (https://635f8158d10573779a18b026--clinquant-sawine-31c539.netlify.app/).
+Here is a [LIVE DEMO](https://635f8158d10573779a18b026--clinquant-sawine-31c539.netlify.app/).
 
 ## Project Setup
 * Open a terminal
