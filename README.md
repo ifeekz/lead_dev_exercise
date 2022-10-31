@@ -1,4 +1,4 @@
-# SimpleBks
+# Lead Dev Assessment
 
 ## Project Setup
 * Open a terminal
